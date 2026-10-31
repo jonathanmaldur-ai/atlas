@@ -79,13 +79,44 @@ Tudo isto foi pedido **por voz** ao Atlas, que delegou ao Claude Code. O Claude 
 
 ### 📈 Monitor do Computador (app de desktop)
 
-App com janela própria (pywebview, sem navegador), atalho na Área de Trabalho e opção de abrir com o Windows.
+App com janela própria (pywebview, sem navegador), atalho na Área de Trabalho e opção de abrir com o Windows. Tem duas abas: **Monitoramento**, ao vivo e atualizando a cada segundo, e **Ajustes de desempenho**.
 
-- **Ao vivo, com gráficos dos últimos 2 minutos:** CPU (uso total, por núcleo, frequência), GPU (uso, VRAM, **temperatura**, ventoinha), RAM, rede por adaptador e discos (espaço, leitura/escrita, SSD/HDD, saúde).
-- **Modo jogo em um clique:** liga o Modo de Jogo do Windows, desliga a gravação em segundo plano do Xbox Game Bar, ativa o plano Alto desempenho com turbo agressivo e desliga o core parking. Guarda como estava antes e **Desativar** volta tudo ao original. Durante o jogo, o próprio monitor fica leve (coleta a cada 3 s, prioridade baixa).
-- **Overclock da CPU:** perfis Economia / Padrão / Desempenho / Máximo, plano de energia e estados do processador, sem precisar de administrador. Para CPUs sem multiplicador livre, explica o que dá para fazer na BIOS.
-- **Undervolt da GPU AMD:** tensão, frequência máxima, limite de potência e VRAM pelo driver da AMD (ADLX). Se você não clicar em **Manter** em 20 s, tudo volta sozinho. Também tem **Restaurar padrão de fábrica**.
-- **RAM:** mostra cada módulo (velocidade atual, XMP, JEDEC) e tem o botão **Reiniciar na BIOS** com o passo a passo.
+#### Monitoramento
+
+Os cartões do topo resumem tudo num relance (CPU, GPU, RAM, rede e disco), com um ponto verde, amarelo ou vermelho para dizer se está normal. Abaixo deles, cada peça tem um gráfico dos últimos 2 minutos.
+
+<p align="center"><img src="docs/monitor/visao-geral.png" alt="Visão geral: cartões de resumo e gráfico do processador" width="100%"></p>
+
+**Processador:** uso total, velocidade atual e base (para ver o turbo atuando), processos, threads, tempo ligado e uso de cada um dos processadores lógicos.
+
+<p align="center"><img src="docs/monitor/gpu.png" alt="Placa de vídeo: uso, VRAM e temperatura" width="100%"></p>
+
+**Placa de vídeo:** uso, VRAM ocupada, **temperatura com gráfico próprio**, consumo e ventoinha. Em placas AMD e Intel, a temperatura vem do mesmo sensor do driver que o Gerenciador de Tarefas usa. Em NVIDIA, vem do `nvidia-smi`.
+
+<p align="center"><img src="docs/monitor/ram-e-rede.png" alt="Memória RAM e rede" width="100%"></p>
+
+**Memória RAM e rede:** RAM em uso, disponível e confirmada. Download e upload somados, com uma tabela por adaptador (cabo e Wi-Fi) mostrando a velocidade do link.
+
+<p align="center"><img src="docs/monitor/discos.png" alt="Armazenamento: espaço por unidade e leitura/escrita por SSD" width="100%"></p>
+
+**Armazenamento:** espaço livre de cada unidade, com alerta amarelo quando está enchendo, e, para cada SSD/HDD, leitura, escrita, tempo ativo, tipo (NVMe, SATA) e saúde.
+
+#### Ajustes de desempenho
+
+Tudo nesta aba pode ser desfeito com os botões de restaurar, e a aba avisa antes: valores agressivos podem travar o PC, mas não estragam as peças.
+
+<p align="center"><img src="docs/monitor/modo-jogo-e-cpu.png" alt="Modo jogo e overclock da CPU" width="100%"></p>
+
+- **Modo jogo em um clique:** liga o Modo de Jogo do Windows, desliga a gravação em segundo plano do Xbox Game Bar, ativa o plano Alto desempenho com turbo agressivo, desliga o core parking e liga o agendamento de GPU por hardware. Guarda como estava antes, e **Desativar** volta tudo ao original. Durante o jogo, o próprio monitor fica leve (coleta a cada 3 s, prioridade baixa).
+- **Overclock da CPU:** perfis Economia / Padrão / Desempenho / Máximo, plano de energia, modo de turbo e estados mínimo e máximo do processador, sem precisar de administrador. Quando a CPU tem multiplicador travado (sem o "K"), ele detecta e explica o que dá para ganhar na BIOS.
+
+<p align="center"><img src="docs/monitor/undervolt-gpu.png" alt="Undervolt da GPU AMD" width="100%"></p>
+
+- **Undervolt da GPU AMD:** perfis prontos (leve, moderado, undervolt + potência, silencioso/frio) ou ajuste fino de tensão, frequência máxima, limite de potência e VRAM, aplicados pelo driver da AMD (ADLX). Se você não clicar em **Manter** em 20 s, tudo volta sozinho. Também tem **Restaurar padrão de fábrica**.
+
+<p align="center"><img src="docs/monitor/ram.png" alt="Overclock da memória RAM" width="100%"></p>
+
+- **Overclock da RAM:** mostra cada módulo (velocidade atual, nominal/XMP e padrão JEDEC), avisa quando há kits diferentes misturados e traz o passo a passo na BIOS, com o botão **Reiniciar na BIOS**.
 
 ### ✅ Testes automáticos
 
@@ -152,7 +183,7 @@ atlas/
 ├── interface.html        # HUD do Atlas
 ├── config.exemplo.json   # modelo de configuração
 ├── iniciar-atlas.vbs / desligar-atlas.vbs / reiniciar-tudo.ps1 / instalar-inicializacao.ps1
-└── docs/banner.svg
+└── docs/                 # banner e telas do Monitor do Computador
 ```
 
 ## Privacidade
