@@ -1,0 +1,19 @@
+# Ambiente e caches
+.venv/
+__pycache__/
+*.pyc
+
+# Perfil do Edge do Atlas (cookies e sessões do navegador)
+.perfil-edge/
+
+# Modelos baixados (grandes)
+modelos-voz/
+
+# Dados pessoais e estado local
+config.json
+memoria.json
+historico*.json
+lembretes.json
+tarefas.json
+voz_dono.npy
+atlas.log

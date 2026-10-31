@@ -1,0 +1,25 @@
+﻿{
+  "nome": "Atlas",
+  "usuario": "Seu nome",
+  "modelo": "qwen3:14b",
+  "modelo_visao": "gemma3:12b",
+  "whisper": "large-v3-turbo",
+  "porta": 7777,
+  "voz": "pt-BR-AntonioNeural",
+  "robotico": 0.25,
+  "pasta_arquivos": "E:\\Assistente IA\\arquivos",
+  "programas": {
+    "chrome": "chrome",
+    "navegador": "chrome",
+    "antigravity": "antigravity",
+    "explorador": "explorer",
+    "calculadora": "calc",
+    "bloco de notas": "notepad",
+    "whatsapp": "whatsapp:",
+    "spotify": "spotify:",
+    "steam": "steam:",
+    "discord": "discord:"
+  }
+}
+
+

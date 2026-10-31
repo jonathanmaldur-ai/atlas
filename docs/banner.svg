@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360">
+  <defs>
+    <pattern id="hex" width="78" height="45" patternUnits="userSpaceOnUse">
+      <path d="M13 0h26l13 22.5-13 22.5h-26l-13-22.5z M52 22.5h26" fill="none" stroke="#00e5ff" stroke-opacity=".07"/>
+    </pattern>
+    <radialGradient id="brilho" cx="28%" cy="50%" r="60%">
+      <stop offset="0" stop-color="#005a8c" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#01040a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pupila">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".35" stop-color="#00e5ff"/>
+      <stop offset="1" stop-color="#00e5ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="360" fill="#01040a"/>
+  <rect width="1200" height="360" fill="url(#hex)"/>
+  <rect width="1200" height="360" fill="url(#brilho)"/>
+
+  <!-- olho -->
+  <g transform="translate(300 180)" fill="none" stroke="#00e5ff" filter="url(#glow)">
+    <circle r="138" stroke-opacity=".18" stroke-dasharray="2 9"/>
+    <path d="M-118 -60A132 132 0 0 1 60 -118" stroke-width="4" stroke-opacity=".9"/>
+    <path d="M118 60A132 132 0 0 1 -60 118" stroke-width="4" stroke-opacity=".9"/>
+    <path d="M-128 30A132 132 0 0 0 -95 92" stroke-width="2" stroke-opacity=".6"/>
+    <path d="M128 -30A132 132 0 0 0 95 -92" stroke-width="2" stroke-opacity=".6"/>
+    <circle r="105" stroke-opacity=".35" stroke-dasharray="1 6"/>
+    <polygon points="0,-72 62,-36 62,36 0,72 -62,36 -62,-36" stroke-width="3" stroke-opacity=".85"/>
+    <polygon points="0,-52 45,-26 45,26 0,52 -45,26 -45,-26" stroke-width="2" stroke-opacity=".6"/>
+    <g stroke-opacity=".5" stroke-width="2">
+      <path d="M-150 0h-22M150 0h22M0 -150v-22M0 150v22"/>
+    </g>
+  </g>
+  <circle cx="300" cy="180" r="40" fill="url(#pupila)"/>
+  <circle cx="300" cy="180" r="11" fill="#01040a"/>
+
+  <!-- texto -->
+  <g font-family="Orbitron, 'Segoe UI', 'Arial Black', sans-serif" fill="#e6fbff">
+    <text x="520" y="168" font-size="88" font-weight="700" letter-spacing="22" filter="url(#glow)">ATLAS</text>
+  </g>
+  <g font-family="'Share Tech Mono', Consolas, 'Courier New', monospace">
+    <text x="524" y="214" font-size="24" fill="#7fdcef" letter-spacing="2">Assistente pessoal de voz que roda no seu PC</text>
+    <text x="524" y="256" font-size="17" fill="#00e5ff" fill-opacity=".75" letter-spacing="3">OUVE · PENSA · AGE · FALA</text>
+    <text x="524" y="296" font-size="15" fill="#3f7488" letter-spacing="2">// sistema online  ·  núcleo qwen3:14b  ·  whisper  ·  edge-tts</text>
+  </g>
+  <path d="M520 110h40M1150 330h-60" stroke="#00e5ff" stroke-opacity=".5" stroke-width="2"/>
+</svg>
